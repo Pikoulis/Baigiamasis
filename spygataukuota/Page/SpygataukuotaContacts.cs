@@ -12,7 +12,7 @@ namespace spygataukuota.Page
         private IWebElement MapIframe => Driver.FindElement(By.CssSelector("#middle_blocks > li > div > p:nth-child(9) > iframe"));
         private IWebElement MapDirections => Driver.FindElement(By.CssSelector("#mapDiv > div > div > div:nth-child(10) > div > div > div > div.navigate > div.navigate > a"));
         private IWebElement DarboLaikas => Driver.FindElement(By.CssSelector("#block_contact_body > p:nth-child(2)"));
-
+        private IWebElement Recaptcha => Driver.FindElement(By.CssSelector("#contact_form > div.grecaptcha"));
         public SpygataukuotaContacts(IWebDriver webdriver) : base(webdriver)
         {
 
@@ -20,6 +20,7 @@ namespace spygataukuota.Page
         public SpygataukuotaContacts InitiateGooglePage()
         {
             Actions actions = new Actions(Driver);
+            GetWait().Until(ExpectedConditions.ElementToBeClickable(Recaptcha)); 
             actions.MoveToElement(DarboLaikas);
             actions.Perform();
             Driver.SwitchTo().Frame(MapIframe);

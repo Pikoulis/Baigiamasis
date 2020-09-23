@@ -34,11 +34,11 @@ namespace spygataukuota.Page
             Random rnd = new Random();
             int randomNumber = rnd.Next(1, 13);
             GetWait().Until(ExpectedConditions.ElementToBeClickable(Name));
-            Name.SendKeys(RandomString(7));
-            Surname.SendKeys(RandomString(7));
+            Name.SendKeys(RandomString(7, true));
+            Surname.SendKeys(RandomString(7, true));
             GetWait().Until(ExpectedConditions.ElementToBeClickable(ConditionCheckBox));
             ConditionCheckBox.Click();
-            Email.SendKeys(RandomString(7) + "@" + RandomString(4) + "." + RandomString(3));
+            Email.SendKeys(RandomString(7,false) + "@" + RandomString(4, false) + "." + RandomString(3, false));
             Phone.SendKeys(Convert.ToString(randomNumber));
             Street.SendKeys(AllTexts.Street);
             House.SendKeys(AllTexts.House);
@@ -46,9 +46,18 @@ namespace spygataukuota.Page
             return this;
         }
 
-        private string RandomString(int length)
+        private string RandomString(int length, bool LT)
         {
-            const string pool = AllTexts.LithuanianChars;
+            string pool;
+            if (LT)
+            {
+                pool = AllTexts.LithuanianChars;
+            }
+            else
+            {
+                pool = AllTexts.Chars;
+            }
+
             var builder = new StringBuilder();
 
             for (var i = 0; i < length; i++)

@@ -5,6 +5,7 @@ namespace spygataukuota.Text
     {
         public static string CookieText = "Mes naudojame slapukus, siekdami užtikrinti geriausią įmanomą tinklapio naudojimą vartotojui. Naudodamiesi šiuo tinklapiu, taip pat ir patekę iš kito tinklapio jūs sutinkate su slapukų naudojimu.";
         public const string LithuanianChars = "abcdefghijklmnopqrstuvwxyząčęėįšųūž";
+        public const string Chars = "abcdefghijklmnopqrstuvwxyz";
         public static string Street = "Rotušės a.";
         public static string House = "15";
         public const string FBurl = "https://www.facebook.com/spygashop";
