@@ -40,14 +40,14 @@ namespace spygataukuota.Page
             return this;
         }
 
-        public SpygataukuotaHomePage AddToBasket(string product) 
+        public SpygataukuotaHomePage AddToBasket(string product)
         {
             GetWait().Until(ExpectedConditions.ElementToBeClickable(SearchForGoodsImput));
             SearchForGoodsImput.SendKeys(product);
             SearchForGoodsImput.SendKeys(Keys.Enter);
             return this;
         }
-        public SpygataukuotaHomePage FacebookIconClick() 
+        public SpygataukuotaHomePage FacebookIconClick()
         {
             FacebookIcon.Click();
             string Facebook = Driver.WindowHandles[1];
@@ -55,7 +55,7 @@ namespace spygataukuota.Page
             Assert.AreEqual(Driver.SwitchTo().Window(Facebook).Url, AllTexts.FBurl);
             return this;
         }
-        public SpygataukuotaHomePage ClickContacts() 
+        public SpygataukuotaHomePage ClickContacts()
         {
             Contacts.Click();
             return this;

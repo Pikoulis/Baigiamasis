@@ -3,7 +3,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
-using System.Threading;
 
 namespace spygataukuota.Page
 {
@@ -55,7 +54,7 @@ namespace spygataukuota.Page
             List<int> sorted = new List<int>();
             string price;
             int priceInNumers;
-            
+
             for (int i = 0; i < Prices.Count; i++)
             {
                 price = Prices[i].Text;
@@ -66,19 +65,19 @@ namespace spygataukuota.Page
             }
             sorted.Sort((a, b) => b.CompareTo(a)); // descending sort
             Assert.AreEqual(true, TwoListCompare(original, sorted), "Turejo buti surusiuota des bet taip nenutiko");
-                return this;
+            return this;
         }
-        private bool TwoListCompare(List<int> original, List<int> sorted) 
+        private bool TwoListCompare(List<int> original, List<int> sorted)
         {
             bool twoListCompare = false;
-            for (int i = 0; i < original.Count; i++) 
+            for (int i = 0; i < original.Count; i++)
             {
                 if (original[i] != sorted[i])
                 {
                     twoListCompare = false;
                     break;
                 }
-                else 
+                else
                 {
                     twoListCompare = true;
                 }

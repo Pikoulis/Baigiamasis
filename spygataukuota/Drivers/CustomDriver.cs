@@ -50,11 +50,9 @@ namespace spygataukuota.Drivers
         private static IWebDriver GetChromeWithOptions()
         {
             ChromeOptions options = new ChromeOptions();
-            string UserDataPath = Path.GetDirectoryName(
-             Path.GetDirectoryName(
-             Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)));
-            string UserDataPathFolder = Path.Combine(UserDataPath, "User Data");
-            options.AddArgument($"user-data-dir={UserDataPathFolder}");
+            string userDataPath = Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)));
+            string userDataPathFolder = Path.Combine(userDataPath, "User Data");
+            options.AddArgument($"user-data-dir={userDataPathFolder}");
             options.AddArgument("disable-infobars");
             options.AddArgument("--profile-directory=Default");
             return new ChromeDriver(options);
