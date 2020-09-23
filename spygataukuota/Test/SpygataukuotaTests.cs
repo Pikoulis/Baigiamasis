@@ -14,10 +14,9 @@ namespace spygataukuota.Test
                 .CheckCookieAgreementText(cookieAgreementText)
                 .AgreeWithCookie();
         }
-        [Test]
-        public static void AddToBasketAndFillTheForm()
+        [TestCase("Meow", TestName = "AddToBasketAndFillTheForm")]
+        public static void AddToBasketAndFillTheForm(string searchString)
         {
-            string searchString = "Meow";
             home.NavigateToPage()
                 .AddToBasket(searchString);
             search.CkeckSearchText(searchString)
@@ -42,10 +41,10 @@ namespace spygataukuota.Test
             contacts.InitiateGooglePage();
             google.CheckTootalKm(AllTexts.Address);
         }
-        [Test]
-        public static void FilterByPriceCheck()
+
+        [TestCase("Meow", TestName = "FilterByDescPriceCheck")]
+        public static void FilterByPriceCheck(string searchString)
         {
-            string searchString = "Meow";
             home.NavigateToPage()
                 .AddToBasket(searchString);
             search.CkeckSearchText(searchString)

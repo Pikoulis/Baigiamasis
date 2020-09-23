@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace spygataukuota.Page
 {
-    public class SpygataukuotaContacts: BasePage
+    public class SpygataukuotaContacts : BasePage
     {
         private IWebElement MapIframe => Driver.FindElement(By.CssSelector("#middle_blocks > li > div > p:nth-child(9) > iframe"));
         private IWebElement MapDirections => Driver.FindElement(By.CssSelector("#mapDiv > div > div > div:nth-child(10) > div > div > div > div.navigate > div.navigate > a"));
@@ -17,7 +17,7 @@ namespace spygataukuota.Page
         {
 
         }
-        public SpygataukuotaContacts InitiateGooglePage() 
+        public SpygataukuotaContacts InitiateGooglePage()
         {
             Actions actions = new Actions(Driver);
             actions.MoveToElement(DarboLaikas);

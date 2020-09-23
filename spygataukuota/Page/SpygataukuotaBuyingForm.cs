@@ -8,7 +8,7 @@ namespace spygataukuota.Page
 {
     public class SpygataukuotaBuyingForm : BasePage
     {
-        private static Random random = new Random((int)DateTime.Now.Ticks);
+        private static readonly Random random = new Random((int)DateTime.Now.Ticks);
         private IWebElement Name => Driver.FindElement(By.CssSelector("#checkout_main_form > div.grid_20.alpha.checkout-part-user > div.billing-physical > div:nth-child(1) > input"));
         private IWebElement Surname => Driver.FindElement(By.CssSelector("#checkout_main_form > div.grid_20.alpha.checkout-part-user > div.billing-physical > div:nth-child(2) > input"));
         private IWebElement Email => Driver.FindElement(By.CssSelector("#checkout_main_form > div.grid_20.alpha.checkout-part-user > div.billing-physical > div:nth-child(4) > input"));
@@ -17,9 +17,8 @@ namespace spygataukuota.Page
         private IWebElement ConditionCheckBox => Driver.FindElement(By.CssSelector("#terms"));
         private IWebElement Street => Driver.FindElement(By.Id("billingedit_street"));
         private IWebElement House => Driver.FindElement(By.Id("billingedit_house"));
-        private IWebElement OrderButton => Driver.FindElement(By.Id("checkout_confirm"));
-        
-        public SpygataukuotaBuyingForm(IWebDriver webdriver) : base(webdriver)   
+
+        public SpygataukuotaBuyingForm(IWebDriver webdriver) : base(webdriver)
         {
 
         }
@@ -47,7 +46,7 @@ namespace spygataukuota.Page
             return this;
         }
 
-        private string RandomString(int length) 
+        private string RandomString(int length)
         {
             const string pool = AllTexts.LithuanianChars;
             var builder = new StringBuilder();
@@ -60,5 +59,5 @@ namespace spygataukuota.Page
 
             return builder.ToString();
         }
-     }
+    }
 }

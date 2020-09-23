@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 namespace spygataukuota.Drivers
 {
 
-        enum Browsers
-        {
-            Chrome,
-            Firefox,
-            Egde,
-            IE,
-            Opera,
-            Safari,
-            ChromeProfile
-        }
+    enum Browsers
+    {
+        Chrome,
+        Firefox,
+        Egde,
+        IE,
+        Opera,
+        Safari,
+        ChromeProfile
+    }
 
 }

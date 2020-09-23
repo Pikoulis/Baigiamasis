@@ -16,7 +16,7 @@ namespace spygataukuota.Test
         public static SpygataukuotaProductPage product;
         public static SpygataukuotaShippingSelection shipp;
         public static SpygataukuotaBuyingForm form;
-        public static  FacebookSpygataukuotaHome fbHome;
+        public static FacebookSpygataukuotaHome fbHome;
         public static SpygataukuotaContacts contacts;
         public static GoogleMapsPage google;
         public static SpygataukuotaPasswordRecovery recovery;

@@ -21,9 +21,9 @@ namespace spygataukuota.Page
         }
         public SpygataukuotaPasswordRecovery CheckSuccessMessage()
         {
-            Assert.AreEqual(AllTexts.SucessMessage1, MessageForUser.Text);
+            Assert.AreEqual(AllTexts.SuccessPasswordRecoveryEmailSendText, MessageForUser.Text);
             return this;
-            }
+        }
 
     }
 }

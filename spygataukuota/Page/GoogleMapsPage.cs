@@ -20,14 +20,14 @@ namespace spygataukuota.Page
                 Driver.Url = PageAddress;
             return this;
         }
-        public GoogleMapsPage CheckTootalKm (string adress)
+        public GoogleMapsPage CheckTootalKm(string adress)
         {
             Driver.SwitchTo().Frame(AgreementIframe);
             IagreeButton.Click();
             CarIcon.Click();
             FromImput.SendKeys(adress);
             FromImput.SendKeys(Keys.Enter);
-            Assert.AreEqual("108 km",TotalKilometers.Text, $"Tiketasi, kad bus 108 km, bet buvo: {TotalKilometers.Text}");
+            Assert.AreEqual("108 km", TotalKilometers.Text, $"Tiketasi, kad bus 108 km, bet buvo: {TotalKilometers.Text}");
             return this;
         }
     }
